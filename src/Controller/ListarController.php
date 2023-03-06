@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Repository\CursoRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -12,15 +13,11 @@ use Symfony\Component\Routing\Annotation\Route;
 class ListarController extends AbstractController
 {
     #[Route('/listar', name: 'app_listar')]
-    /**
-     * Summary of index
-     * @param TiendaRepository $tiendaRepository
-     * @return Response
-     */
-    public function index(TiendaRepository $tiendaRepository): Response
+    public function index(CursoRepository $cursoRepository): Response
     {
         return $this->render('listar/index.html.twig', [
-            'controller_name' => 'ListarController',
+            'cursos' => $cursoRepository->findAll(),
         ]);
     }
+
 }
