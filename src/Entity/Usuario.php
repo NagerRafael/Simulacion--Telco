@@ -205,4 +205,16 @@ class Usuario implements UserInterface, PasswordAuthenticatedUserInterface
         return $this->getUserIdentifier();
     }
 
+    public function getClave(): ?string
+    {
+        return $this->clave;
+    }
+
+    public function setClave(string $clave): self
+    {
+        $this->clave = $clave;
+
+        return $this;
+    }
+
 }

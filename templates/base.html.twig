@@ -50,9 +50,7 @@
                             <li class="nav-item">
                                 <a class="nav-link" href="{{path('app_register')}}">Registarse</a>
                             </li>
-                            <li class="nav-item disable">
-                                <a class="nav-link disabled">Exit</a>
-                            </li>
+                        
                         {% elseif is_granted('ROLE_FACTURADOR')%}
                             <li class="nav-item">
                                 <a class="nav-link" href="{{path('app_login')}}">Ingresar<span class="sr-only">(current)</span></a>
@@ -60,21 +58,19 @@
                             <li class="nav-item">
                                 <a class="nav-link" href="{{path('app_register')}}">Registarse</a>
                             </li>
-                            <li class="nav-item disable">
-                                <a class="nav-link disabled">Exit</a>
-                            </li>
+                            
                         {% elseif is_granted('ROLE_ADMIN')%}
                             <li class="nav-item">
-                                <a class="nav-link" href="{{path('app_login')}}">Ingresar<span class="sr-only">(current)</span></a>
+                                <a class="nav-link" href="{{path('app_login')}}">Empleados<span class="sr-only">(current)</span></a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="{{path('app_register')}}">Registarse</a>
                             </li>
-                            <li class="nav-item disable">
-                                <a class="nav-link disabled">Exit</a>
-                            </li>
+
                         {% endif %}
-                        
+                        <li class="nav-item disable">
+                                <a class="nav-link " href="{{path('app_logout')}}">Exit</a>
+                            </li>
                     </ul>
                     
                     <form class="form-inline my-2 my-lg-0">
