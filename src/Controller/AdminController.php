@@ -8,8 +8,7 @@ use Symfony\Component\Routing\Annotation\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 use App\Repository\UsuarioRepository;
 use App\Entity\Usuario;
-use App\Form\RegistrationFormType;
-use App\Form\UsuarioType;
+use App\Form\ResgistrationEmployeeFormType;
 use App\Security\AppCustomAuthenticator;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\Request;
@@ -52,7 +51,7 @@ class AdminController extends AbstractController
     public function register(Request $request, UserPasswordHasherInterface $userPasswordHasher, UserAuthenticatorInterface $userAuthenticator, AppCustomAuthenticator $authenticator, EntityManagerInterface $entityManager): Response
     {
         $empleado = new Usuario();
-        $form = $this->createForm(UsuarioType::class, $empleado);
+        $form = $this->createForm(ResgistrationEmployeeFormType::class, $empleado);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
@@ -77,5 +76,9 @@ class AdminController extends AbstractController
                 $request
             );
         }
+
+        return $this->render('admin/registerEmployee.html.twig', [
+            'registrationForm' => $form->createView(),
+        ]);
     }
 }

@@ -34,7 +34,7 @@ class PaqueteController extends AbstractController
             return $this->redirectToRoute('app_paquete_index', [], Response::HTTP_SEE_OTHER);
         }
 
-        return $this->renderForm('paquete/new.html.twig', [
+        return $this->render('paquete/new.html.twig', [
             'paquete' => $paquete,
             'form' => $form,
         ]);
@@ -60,7 +60,7 @@ class PaqueteController extends AbstractController
             return $this->redirectToRoute('app_paquete_index', [], Response::HTTP_SEE_OTHER);
         }
 
-        return $this->renderForm('paquete/edit.html.twig', [
+        return $this->render('paquete/edit.html.twig', [
             'paquete' => $paquete,
             'form' => $form,
         ]);

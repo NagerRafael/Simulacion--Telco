@@ -49,8 +49,12 @@ class ResgistrationEmployeeFormType extends AbstractType
                     'Repartidor' => 'ROLE_REPARTIDOR',
                 ],
             ])
-            ->add('tipo')
-            ->add('estado')
+            ->add('submit', SubmitType::class,[
+                'label'=>'Registrarse',
+                'attr'=>[
+                    'class'=>'btn btn-block btn-info'
+                ]
+            ])
         ;
         $builder->get('roles')
             ->addModelTransformer(new CallbackTransformer(

@@ -4,23 +4,23 @@
 
 {% block body %}
 
-    <section class="vh-100" style="background-color: #1769b2;">
+    <section class="vh-100" style="background-color: #909090;">
         <div class="container h-100">
             <div class="row d-flex justify-content-center align-items-center h-100">
                 <div class="col-xl-7">
 
-                    <h1 class="text-white mb-3">Registro</h1>
+                    <h3 class="text-white mb-3">Registrar Empleado</h3>
 
                     <div class="card" style="border-radius: 15px;">
                         <div class="card-body">
 
-                            {{ form_start(UsuarioType) }}
+                            {{ form_start(registrationForm) }}
 
                             <!--<div class="col-md-3 ps-5">
                                 <h6 class="mb-0">NOMBRE</h6>
                             </div>-->
                             <div class="col-md-9 pe-5">
-                                {{ form_row(UsuarioType.nombre, {
+                                {{ form_row(registrationForm.nombre, {
                                                 'label': false,
                                                 'attr' : {
                                                     'placeholder' : 'nombre',
@@ -32,7 +32,7 @@
                         
                             <div class="col-md-9 pe-5">
                                 <!--<input type="text" class="form-control form-control-lg" />-->
-                                {{ form_row(UsuarioType.apellido, {
+                                {{ form_row(registrationForm.apellido, {
                                             'label': false,
                                             'attr' : {
                                                 'placeholder' : 'apellido',
@@ -46,7 +46,7 @@
 
                             
                             <div class="col-md-9 pe-5">
-                                {{ form_row(UsuarioType.correo,{
+                                {{ form_row(registrationForm.correo,{
                                             'label' : false,
                                             'attr' : {
                                                 'placeholder' : 'correo electrónico',
@@ -57,7 +57,7 @@
                             </div>
                     
                             <div class="col-md-9 pe-5">
-                                {{ form_row(UsuarioType.plainPassword,{
+                                {{ form_row(registrationForm.plainPassword,{
                                             'label' : false,
                                             'attr' : {
                                                 'autocomplete' : 'new-password',
@@ -72,7 +72,7 @@
                      
                             <div class="col-md-9 pe-5">
                                 <h6 class="mb-0">Rol</h6>
-                                {{ form_row(UsuarioType.roles,{
+                                {{ form_row(registrationForm.roles,{
                                     'label' : false,
                                     'attr' : {
                                         'required' : true
@@ -81,11 +81,11 @@
                             </div>
                         
                             <div class="px-5 py-4">
-                                {{ form_row(UsuarioType.submit) }}
+                                {{ form_row(registrationForm.submit) }}
                                 <!--<button type="submit" class="btn btn-primary btn-lg">Register</button>-->
                             </div>
 
-                            {{ form_end(UsuarioType) }}
+                            {{ form_end(registrationForm) }}
                         </div>
                     </div>
 
